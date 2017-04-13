@@ -1,16 +1,18 @@
 import React, { Component  } from 'react';
-import { AppRegistry, Text  } from 'react-native';
+import { AppRegistry, Text, View  } from 'react-native';
 import { connect  } from 'react-redux';
 
 import Info from './Info'
+import Instances from  './Instances'
 
 class App extends Component {
 	render() {
 		const {status} = this.props;
 		return (
-			<Text>
+			<View>
+			<Instances />
 			<Info />
-			</Text>
+			</View>
 		);
 	}
 }

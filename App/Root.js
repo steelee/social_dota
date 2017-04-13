@@ -9,7 +9,13 @@ import createStore from './store/configureStore.js'
 
 const store = createStore(
 	{
-		applicationStatus: types.Status.STATUS_DEV
+		applicationStatus: types.Status.STATUS_DEV,
+		instances:{
+			instance_data:[]
+		},
+		loading:{
+			instances_loader: false
+		}
 	}
 )
 

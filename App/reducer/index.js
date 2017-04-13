@@ -11,8 +11,28 @@ const applicationStatus = (state = types.Status, action) => {
 	}
 }
 
+const instances = (state = {}, action) =>{
+	switch (action.type){
+		case types.SET_INSTANCES:
+			return {...state, instance_data: action.data}
+		default:
+			return state
+	}
+}
+
+const loading = (state = {}, action) =>{
+	switch (action.type){
+		case types.INSTANCE_LOADING_ICON:
+			console.log("Flipping to ", action.data)
+			return {...state, instances_loader: action.data}
+		default:
+			return state
+	}
+}
 const ReducerPrime = combineReducers({
 	applicationStatus,
+	instances,
+	loading,
 	routing
 });
 
